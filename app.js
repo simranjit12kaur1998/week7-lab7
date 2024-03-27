@@ -3,10 +3,10 @@ const app = express();
 
 const connectDB = require("./db");
 const {
-  getGoals,
-  renderGoals,
-  addGoal,
-  deleteAllGoals,
+  getMessages,
+  renderMessages,
+  addMessage,
+  deleteAllMessages,
 } = require("./controller");
 
 //Important: will be discussed next week
@@ -24,15 +24,15 @@ connectDB();
 
 // Routes
 
-// Route to render index.html with goals using EJS
-app.get("/", renderGoals);
+// Route to render index.html with Messages using EJS
+app.get("/", renderMessages);
 
-// GET all Goals
-app.get("/api/goals", getGoals);
-// Add a new Goal
-app.post("/api/goals", addGoal);
-// DELETE all Goal
-app.delete("/api/goals", deleteAllGoals);
+// GET all Messages
+app.get("/api/Messages", getMessages);
+// Add a new Message
+app.post("/api/Messages", addMessage);
+// DELETE all Message
+app.delete("/api/Messages", deleteAllMessages);
 
 const PORT = 4000;
 
